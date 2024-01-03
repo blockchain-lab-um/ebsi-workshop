@@ -31,6 +31,18 @@ vcOnboard: conformance getCredential onboard
 run registerDidDocument_ES256K_ES256 vcOnboard.vc
 ```
 
+5. View the DID
+
+```
+view user.did
+```
+
+6. Resolve DID
+
+The DID can be resolve [here](https://hub.ebsi.eu/tools/did-resolver)
+
+The DID can also be resolved on the Universal Resolver [here](https://dev.uniresolver.io/#/resolver), but only when registering it on the pilot environment.
+
 # Trusted Issuer Registration
 
 1. Request credential to register a trusted issuer from conformance service

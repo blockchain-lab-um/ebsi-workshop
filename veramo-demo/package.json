@@ -1,0 +1,26 @@
+{
+  "name": "veramo-ebsi-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --no-warnings src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@blockchain-lab-um/did-provider-ebsi": "1.2.1",
+    "@blockchain-lab-um/did-provider-key": "1.0.7",
+    "@veramo/core": "5.5.3",
+    "@veramo/credential-w3c": "5.5.3",
+    "@veramo/did-manager": "5.5.3",
+    "@veramo/did-resolver": "5.5.3",
+    "@veramo/key-manager": "5.5.3",
+    "@veramo/kms-local": "5.5.3",
+    "@veramo/utils": "5.5.3",
+    "did-resolver": "^4.1.0",
+    "dotenv": "^16.3.1"
+  }
+}

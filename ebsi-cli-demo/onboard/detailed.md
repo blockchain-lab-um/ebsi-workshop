@@ -42,7 +42,7 @@ using token resAuthDIDRInvite.access_token
 did insertDidDocument
 ```
 
-7. Request and "write" access token
+7. Request an "write" access token
 
 ```sh
 # Token scope is `did_write`
