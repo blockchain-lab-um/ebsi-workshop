@@ -3,8 +3,7 @@
 This project is meant to demonstrate how to easily implement Verifiable Credential issuing.
 Issuing is done using a Veramo agent, setup with a did EBSI and did Key providers.
 
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Users can use a did:ebsi identifier to issue verifiable credentials to site visitors.
 
 ## Getting Started
 
@@ -18,6 +17,9 @@ To create a new DID EBSI, using a generated key only the `EBSI_BEARER_TOKEN` is 
 To create a new DID EBSI, using an existing key, `EBSI_BEARER_TOKEN`, `EBSI_PRIVATE_KEY` and `EBSI_ID` are required.
 To import an existing DID EBSI identifier into veramo, `EBSI_PRIVATE_KEY` and `EBSI_DID` are required.
 
+The EBSI Bearer Token is available at [EBSI Users Onboarding service](https://app-pilot.ebsi.eu/users-onboarding/v2).
+Select `Onboard with Captcha` and then `Desktop Wallet`, copy the provided session token into `.env` file.
+
 Second, install the dependencies and start the local development server:
 
 ```bash
@@ -29,5 +31,5 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Additional info
 
-We have provided a script, located in the `issue-demo/scripts/generate_credentials.sh` file.
+We have provided a script, located in the `issuer-demo/scripts/generate_credentials.sh` file.
 The script generates a random valid Secp256r1 private key and a random EBSI id.
