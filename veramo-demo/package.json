@@ -22,5 +22,10 @@
     "@veramo/utils": "5.5.3",
     "did-resolver": "^4.1.0",
     "dotenv": "^16.3.1"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@blockchain-lab-um/did-provider-ebsi@1.2.1": "patches/@blockchain-lab-um__did-provider-ebsi@1.2.1.patch"
+    }
   }
 }
