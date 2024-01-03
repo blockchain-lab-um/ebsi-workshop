@@ -79,7 +79,8 @@ export const importEBSIIdentifier = async (agent) => {
 		did: process.env.EBSI_DID, // did to import
 		provider: 'did:ebsi',
 		alias: 'issuer-primary', // alias to use when referring to this DID
-		keys: [ // keys to import that are referencable by the controller
+		keys: [
+			// keys to import that are referencable by the controller
 			{
 				kid: 'ebsiKey', // id of the key
 				type: 'Secp256r1',

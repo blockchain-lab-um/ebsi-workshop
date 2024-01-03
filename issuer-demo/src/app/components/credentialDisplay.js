@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 import {
@@ -15,11 +15,11 @@ export default function credentialDisplay({ credential, setCredential }) {
 		<Card className='min-w-full'>
 			<CardBody>
 				<Textarea
-          isReadOnly
+					isReadOnly
 					variant='faded'
-          maxRows={30}
+					maxRows={30}
 					value={JSON.stringify(credential, null, 4)}
-          className='min-w-full h-fit'
+					className='min-w-full h-fit'
 				/>
 			</CardBody>
 			<Divider />
