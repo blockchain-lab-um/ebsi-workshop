@@ -1,0 +1,54 @@
+diff --git a/dist/constants.js b/dist/constants.js
+index 5ddc907bbfad114deb4404ce3ba28a21dc459ef5..0b3cdab7070851880e58e4267ac7d355df0e91dc 100644
+--- a/dist/constants.js
++++ b/dist/constants.js
+@@ -1,5 +1,5 @@
+-const BASE_URL = 'https://api-pilot.ebsi.eu';
+-const DID_REGISTRY = `${BASE_URL}/did-registry/v3/identifiers`;
++const BASE_URL = 'https://api-conformance.ebsi.eu';
++const DID_REGISTRY = `${BASE_URL}/did-registry/v4/identifiers`;
+ const TAR_REG = `${BASE_URL}/trusted-apps-registry/v3/apps`;
+ const AUTH_RESPONSE = '/users-onboarding/v2/authentication-responses';
+ const SIOP_SESSIONS = '/authorisation/v2/siop-sessions';
+diff --git a/dist/ebsiDidProvider.js b/dist/ebsiDidProvider.js
+index 30b8bec41a787c7502b4a7750fcfd3d9efa5c75c..e09df167690e1623f2cc471154631dc2ed512603 100644
+--- a/dist/ebsiDidProvider.js
++++ b/dist/ebsiDidProvider.js
+@@ -1,5 +1,5 @@
+ import { AbstractIdentifierProvider } from '@veramo/did-manager';
+-import { bytesToBase64url, hexToBytes } from '@veramo/utils';
++import { bytesToBase64url, hexToBytes} from '@veramo/utils';
+ import elliptic from 'elliptic';
+ import * as jose from 'jose';
+ import { onboard } from './ebsiDidOnboarding.js';
+@@ -34,6 +34,9 @@ export class EbsiDIDProvider extends AbstractIdentifierProvider {
+             privateKeyHex,
+             id: options?.id,
+             keyType,
++            privateKeyJwk: options?.privateKeyJwk,
++            publicKeyJwk: options?.publicKeyJwk,
++            subjectIdentifier: options?.subjectIdentifier,
+         });
+         privateKeyHex = importedKey.privateKeyHex;
+         const kid = `did:ebsi:${importedKey.subjectIdentifier}#${importedKey.jwkThumbprint}`;
+@@ -44,6 +47,7 @@ export class EbsiDIDProvider extends AbstractIdentifierProvider {
+             type: keyType === 'P-256' ? 'Secp256r1' : keyType,
+             kms: this.defaultKms || 'local',
+         });
++
+         const resolution = await context.agent.resolveDid({ didUrl: did });
+         if (resolution.didDocument) {
+             const resolvedVerificationMethod = resolution.didDocument.verificationMethod?.find((vm) => vm.id === kid);
+@@ -122,6 +126,12 @@ export class EbsiDIDProvider extends AbstractIdentifierProvider {
+             privateKeyHex = args.privateKeyHex;
+             jwkThumbprint = await jose.calculateJwkThumbprint(privateKeyJwk, 'sha256');
+             subjectIdentifier = generateEbsiSubjectIdentifier(args.id);
++        } else if (args.privateKeyJwk && args.publicKeyJwk && args.subjectIdentifier) {
++            privateKeyJwk = args.privateKeyJwk;
++            publicKeyJwk = args.publicKeyJwk;
++            privateKeyHex = privateKeyJwkToHex(privateKeyJwk);
++            jwkThumbprint = await jose.calculateJwkThumbprint(privateKeyJwk, 'sha256');
++            subjectIdentifier = args.subjectIdentifier;
+         }
+         else {
+             const keys = await jose.generateKeyPair(algorithm);

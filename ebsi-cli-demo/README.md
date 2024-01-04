@@ -8,3 +8,9 @@ Included instructions:
 - Registering a trusted issuer
 
 The [Demo](demo.md) has a step-by-step guide on how to use the CLI to onboard a DID and register a trusted issuer on the EBSI conformance environment.
+
+## How to run the CLI
+
+```sh
+npx @cef-ebsi/cli
+```
