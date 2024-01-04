@@ -1,5 +1,11 @@
 # DEMO
 
+# How to run the CLI
+
+```sh
+npx @cef-ebsi/cli
+```
+
 # DID Onboardng
 
 1. Set environment to conformance

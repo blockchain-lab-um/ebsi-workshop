@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  '@blockchain-lab-um/did-provider-ebsi@1.2.1':
+    hash: jlgrsvkc2hg2l7yct5dbxopiua
+    path: patches/@blockchain-lab-um__did-provider-ebsi@1.2.1.patch
   eccrypto@1.1.6:
     hash: rjcfmtfgn3z72mudpdif5oxmye
     path: patches/eccrypto@1.1.6.patch
@@ -12,7 +15,7 @@ patchedDependencies:
 dependencies:
   '@blockchain-lab-um/did-provider-ebsi':
     specifier: 1.2.1
-    version: 1.2.1
+    version: 1.2.1(patch_hash=jlgrsvkc2hg2l7yct5dbxopiua)
   '@blockchain-lab-um/did-provider-key':
     specifier: 1.0.7
     version: 1.0.7
@@ -1690,7 +1693,7 @@ packages:
     engines: {node: '>=8.9'}
     dev: false
 
-  /@blockchain-lab-um/did-provider-ebsi@1.2.1:
+  /@blockchain-lab-um/did-provider-ebsi@1.2.1(patch_hash=jlgrsvkc2hg2l7yct5dbxopiua):
     resolution: {integrity: sha512-bVi9KPwZjd59eUCQaZxUdVb+VzsWT4xEFbeW/FaIKh4GfrCR6gYvgwIioVhe2tuTI6g06yOg2Fi2hmG1CKrQwA==}
     dependencies:
       '@cef-ebsi/ebsi-did-resolver': 3.2.0
@@ -1715,6 +1718,7 @@ packages:
       - utf-8-validate
       - web-streams-polyfill
     dev: false
+    patched: true
 
   /@blockchain-lab-um/did-provider-key@1.0.7:
     resolution: {integrity: sha512-pkWO0llegx4mPzeiEG6ZJZekuJ/+mriGQ1MNK6Pgc4mnzxuvCBjyG+8eZpcpR98gInENfSz4bDb0lqHQ93xkHQ==}

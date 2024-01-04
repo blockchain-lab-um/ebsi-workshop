@@ -2,6 +2,9 @@ import "dotenv/config";
 
 import { createVeramoAgent } from "./createVeramoAgent.js";
 
+// EBSI Bearer token can be obtained here:
+// https://app-pilot.ebsi.eu/users-onboarding/v2
+
 const main = async () => {
   // Initialize Veramo agent
   const agent = await createVeramoAgent();

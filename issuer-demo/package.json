@@ -34,7 +34,8 @@
 	},
 	"pnpm": {
 		"patchedDependencies": {
-			"eccrypto@1.1.6": "patches/eccrypto@1.1.6.patch"
+			"eccrypto@1.1.6": "patches/eccrypto@1.1.6.patch",
+			"@blockchain-lab-um/did-provider-ebsi@1.2.1": "patches/@blockchain-lab-um__did-provider-ebsi@1.2.1.patch"
 		}
 	}
 }
