@@ -5,7 +5,7 @@ import Providers from "./providers";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Veramo issue demo",
+  title: "Veramo issuer demo",
   description: "Next app for issuing credentials with Veramo",
 };
 

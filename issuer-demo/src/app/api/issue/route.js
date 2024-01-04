@@ -33,6 +33,6 @@ export async function GET(request) {
     return NextResponse.json(credential, { status: 201 });
   } catch (error) {
     console.error(error);
-    return NextResponse.error(error, { status: 500 });
+    return NextResponse.json(error, { status: 500 });
   }
 }
