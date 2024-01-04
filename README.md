@@ -13,4 +13,4 @@ This repository contains the material for the EBSI Workshop.
 
 - EBSI CLI Demo - Demonstrates how to use the EBSI CLI to onboard an EBSI Legal Entity DID into the EBSI DID Registry and register that DID as a Trusted Issuer
 - Veramo Demo - Demonstrates how to use Veramo to create EBSI DIDs (Legal Entity and Natural Person)
-- Issuer Demo - Demonstrates how to use Veramo to issue Verifiable Credentials (issuer is a EBSI Trusted Issuer)
+- Issuer Demo - Demonstrates how to use Veramo to issue Verifiable Credentials (issuer is an EBSI Trusted Issuer)
