@@ -1,6 +1,8 @@
 import { createEBSIIdentifier, createVeramoAgent } from "./setupVeramoAgent";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 const agent = await createVeramoAgent();
 const identifier = await createEBSIIdentifier(agent);
 
@@ -9,7 +11,6 @@ export async function GET(request) {
     const searchParams = request.nextUrl.searchParams;
     const name = decodeURIComponent(searchParams.get("name"));
     const did = decodeURIComponent(searchParams.get("did"));
-
     // Issue a new credential
     const credential = await agent.createVerifiableCredential({
       credential: {
